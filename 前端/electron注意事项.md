@@ -7,3 +7,5 @@
 
 3.主窗体加载打包后的文件也是根据electron的main.js的路径来的，如果你的这个核心js在src下面，那么打包后获取静态文件如下：
 > mainWindow.loadURL(path.join(__dirname,'../dist/index.html'+"?username=123"));
+
+4.内嵌html项目尽量避免使用 alert弹窗，因此electron截至25版本为止都有个bug，即：alert弹窗后输入框失去焦点，无法输入，即使鼠标点击输入框也没反应
