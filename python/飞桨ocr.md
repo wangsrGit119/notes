@@ -2,18 +2,18 @@
 ## 环境
 python>=3.8
 
+```
 pip install protobuf==3.20.0
 pip install onnx==1.11.0
 
-
-
 python -m pip install paddlepaddle==2.4.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install "paddleocr>=2.0.1" # Recommend to use version 2.0.1+
-
+```
 ## numpy报错注意
+```
 pip uninstall -y numpy
 pip install "Numpy==1.23.5"
-
+```
 
 ## demo
 ```

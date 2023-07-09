@@ -11,11 +11,13 @@ windows上 下载安装完成后 将安装目录授予普通用户读写权限 �
 https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
 
 ## 查看本地配置
+```
 conda info
 conda config --show
-
+```
 ## pip源设置
 > 推荐阿里云
+```
 pip config set global.index-url https://repo.huaweicloud.com/repository/pypi/simple/
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 pip config set global.index-url https://pypi.org/
@@ -23,7 +25,7 @@ pip config set global.index-url https://pypi.douban.com/simple/
 
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/
 pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple/
-
+```
 
 ## pip包默认安装到 C没有到 conda对应环境则按照下面
 python -m site
@@ -41,11 +43,13 @@ USER_BASE="D:\ProgramData\miniconda3\Scripts"
 
 
 ## 环境
+```
 conda env list | 查看所有环境
 conda create -n venv39[自定义名称] python=3.9
 conda create -p D:\ProgramData\miniconda3\envs\paddle_ocr_38 python=3.8【指定-p后不能再指定-n，直接在文件夹指定环境名称即可】
 conda create -p D:\ProgramData\miniconda3\envs\yolo_311 python=3.11
 conda remove --name venv39 --all
+```
 ## 激活环境
 ### on windows
 activate venv39
@@ -69,10 +73,12 @@ conda deactivate
 
 打开Anaconda Prompt或终端，并使用以下命令来更新虚拟环境的路径：
 
-
+```
 conda config --add envs_dirs /path/to/new/directory
+```
 其中，/path/to/new/directory是你想要将虚拟环境移动到的新文件夹路径。
 
 现在，你可以重新激活虚拟环境并在新位置中使用它了：
-
+```
 conda activate /path/to/new/directory/your_env_name
+```
