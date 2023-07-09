@@ -20,7 +20,8 @@ pip install "Numpy==1.23.5"
 from paddleocr import PaddleOCR
 ocr = PaddleOCR(enable_mkldnn=True,use_angle_cls=True, lang='ch',det_model_dir='./models/ch_PP-OCRv3_det_infer.tar', rec_model_dir='./models/ch_PP-OCRv3_rec_infer.tar', cls_model_dir='./models/ch_ppocr_mobile_v2.0_cls_infer.tar')
 ocr.rec_batch_num = 10
-ocr.use_mp = Trueimg_path = './1.png'
+ocr.use_mp = True
+img_path = './1.png'
 result = ocr.ocr(img_path, cls=True)
 for idx in range(len(result)):
     res = result[idx]
