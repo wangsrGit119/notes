@@ -20,7 +20,7 @@ pip install "Numpy==1.23.5"
 ```
 
 ## demo
-```
+```python
 from paddleocr import PaddleOCR
 ocr = PaddleOCR(enable_mkldnn=True,use_angle_cls=True, lang='ch',det_model_dir='./models/ch_PP-OCRv3_det_infer.tar', rec_model_dir='./models/ch_PP-OCRv3_rec_infer.tar', cls_model_dir='./models/ch_ppocr_mobile_v2.0_cls_infer.tar')
 ocr.rec_batch_num = 10
