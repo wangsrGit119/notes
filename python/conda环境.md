@@ -82,3 +82,9 @@ conda config --add envs_dirs /path/to/new/directory
 ```
 conda activate /path/to/new/directory/your_env_name
 ```
+
+### 常见错误
+
+> IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+一般执行  `source activate`即可
