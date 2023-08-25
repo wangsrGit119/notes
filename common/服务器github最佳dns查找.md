@@ -1,9 +1,9 @@
 
-## 安装基础命令
+## 安装nslookup基础命令
 
-nslookup
 
 ```
+apt install dnsutils # ubuntu
 nslookup github.global.ssl.fastly.net
 nslookup github.com
 ```
