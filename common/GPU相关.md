@@ -14,3 +14,21 @@
 | T4          | Turing | 2560     | 320        | 16GB      | 8.1            | 0.25           |
 | GTX 1060    | Pascal | 1280     | N/A        | 3GB/6GB   | 3.9            | 0.12           |
 
+## 系统GPU使用查看
+
+```shell
+nvidia-smi
+```
+
+这将显示当前系统中所有 NVIDIA GPU 的详细信息，包括 GPU 的使用率、内存使用情况、进程占用 GPU 的信息等。
+```shell
+pip install gpustat
+```
+
+安装完成后，在终端中运行以下命令来查看 GPU 使用情况：
+
+```shell
+gpustat
+
+```
+这将显示当前系统中所有 NVIDIA GPU 的简要使用情况。
