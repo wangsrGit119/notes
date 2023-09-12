@@ -28,6 +28,8 @@ scoop install ffmpeg
 https://www.cnblogs.com/famhuai/p/ffmpeg.html
 
 ## 视频控制
+
+```
 //渐入
 i in.mp4 -vf fade=in:0:90 out.mp4                 
 //黑白                    
@@ -56,7 +58,7 @@ i in.mp4 -vf vflip out.mp4
 i in.mp4 -vf format=gray,geq=lum_expr='(p(X,Y)+(256-p(X-4,Y-4)))/2' out.mp4
 //均匀噪声
 i in.mp4 -vf noise=alls=20:allf=t+u out.mp4
-
+```
 ## RTP推流
 
 - srs
@@ -70,3 +72,28 @@ i in.mp4 -vf noise=alls=20:allf=t+u out.mp4
 // -c:v 为 copy则不能设置 -r fps
 ffmpeg -i {0} -c:v libx264 -preset veryfast -r 10 -minrate 100k -maxrate 200k -bufsize 500k -c:a aac -f flv {1}
 ```
+
+## ffmpeg录制视频
+
+> 录制视频的时候如果录制为mp4,且突然中断进程，那么大概率文件是损坏的，无法播放。解决方案
+
+1.录制参数更改
+
+> 使用  `"-movflags", "faststart" `或者 `"-movflags", "frag_keyframe+empty_moov"`,但是这样有个缺点，就是录制的视频前端播放加载的时候要等整个视频加载完毕才能播放，如果视频比较大则加载很耗时
+
+```golang
+ffmpegArgs := []string{
+		"-i", url,
+		"-c:v", "copy",
+		"-c:a", "aac",
+		"-f", "mp4",
+		"-frag_duration", "10", //这个选项可以将输入文件分成较小的片段，每个片段的持续时间为X秒。这样可以更好地支持流媒体分段，并在发生中断时只损坏较小的片段而不是整个文件。
+
+		"-movflags", "faststart", //moov box移动到文件的开头，以便在网络传输时能够更快地开始播放。这样可以减少用户等待时间，并减少因为网络传输未完成而导致的中断损坏的风险
+		// "-movflags", "frag_keyframe+empty_moov",//告诉FFmpeg在关键帧之间进行分段。这样可以确保每个分段都从关键帧开始，也可以防止突然终止造成的文件损坏
+		fileResPath,
+	}
+
+```
+
+2.录制为 HLS或者DASH，然后转mp4提供下载
