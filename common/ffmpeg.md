@@ -97,3 +97,17 @@ ffmpegArgs := []string{
 ```
 
 2.录制为 HLS或者DASH，然后转mp4提供下载
+
+> fileList.txt内容
+
+```txt
+file 'segment-0.ts'
+file 'segment-1.ts'
+file 'segment-2.ts'
+file 'segment-3.ts'
+```
+
+```golang
+// mp4FilePath为输出mp4文件
+cmd := exec.Command(ffmpegPath, "-y", "-f", "concat", "-safe", "0", "-i", fileList.txt, "-c", "copy", mp4FilePath)
+```
