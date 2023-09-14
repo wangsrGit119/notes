@@ -87,10 +87,8 @@ ffmpegArgs := []string{
 		"-c:v", "copy",
 		"-c:a", "aac",
 		"-f", "mp4",
-		"-frag_duration", "10", //这个选项可以将输入文件分成较小的片段，每个片段的持续时间为X秒。这样可以更好地支持流媒体分段，并在发生中断时只损坏较小的片段而不是整个文件。
-
-		"-movflags", "faststart", //moov box移动到文件的开头，以便在网络传输时能够更快地开始播放。这样可以减少用户等待时间，并减少因为网络传输未完成而导致的中断损坏的风险
-		// "-movflags", "frag_keyframe+empty_moov",//告诉FFmpeg在关键帧之间进行分段。这样可以确保每个分段都从关键帧开始，也可以防止突然终止造成的文件损坏
+		// "-movflags", "faststart", //moov box移动到文件的开头，以便在网络传输时能够更快地开始播放。这样可以减少用户等待时间，并减少因为网络传输未完成而导致的中断损坏的风险
+		"-movflags", "frag_keyframe+empty_moov",//告诉FFmpeg在关键帧之间进行分段。这样可以确保每个分段都从关键帧开始，也可以防止突然终止造成的文件损坏
 		fileResPath,
 	}
 
