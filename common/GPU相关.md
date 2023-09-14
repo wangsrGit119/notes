@@ -32,3 +32,9 @@ gpustat
 
 ```
 这将显示当前系统中所有 NVIDIA GPU 的简要使用情况。
+
+
+## cuda版本
+
+
+https://pytorch.org/get-started/locally/
