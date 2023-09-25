@@ -10,6 +10,8 @@ https://github.com/mpromonet/webrtc-streamer
 
 ## 启动 容器
 
+> 注意事项 ：-o 参数 是转发数据包 默认情况下是要在服务内部编解码的 因此会消耗CPU 加上则默认转发RTP包
+
 - 默认启动
 
 ```shell
@@ -26,7 +28,7 @@ docker run --rm --name webrtc-streamer -p 18001:8000 -v /home/webrtc-stream/conf
 
 https://github.com/mpromonet/webrtc-streamer/releases/tag/v0.8.1
 ```shell
-webrtc-streamer -S0.0.0.0:3478 -s$(curl -s ifconfig.me):3478 -T0.0.0.0:3479 -tturn:turn@$(curl -s ifconfig.me):3479
+webrtc-streamer -S0.0.0.0:3478 -s$(curl -s ifconfig.me):3478 -T0.0.0.0:3479 -tturn:turn@$(curl -s ifconfig.me):3479 -o
 ```
 
 

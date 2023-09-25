@@ -108,4 +108,13 @@ file 'segment-3.ts'
 ```golang
 // mp4FilePath为输出mp4文件
 cmd := exec.Command(ffmpegPath, "-y", "-f", "concat", "-safe", "0", "-i", fileList.txt, "-c", "copy", mp4FilePath)
+
+ffmpeg -y -f concat -safe 0 -i filelist_tmp.txt -c copy ef849a79-4b1b-4ee1-9397-53243c1bf967.mp4
+
+
+ffmpeg -y -f concat  -i filelist_tmp.txt -c copy ef849a79-4b1b-4ee1-9397-53243c1bf967.mp4
+
+ffmpeg -allowed_extensions ALL -i ef849a79-4b1b-4ee1-9397-53243c1bf967.m3u8 -c copy ef849a79-4b1b-4ee1-9397-53243c1bf967.mp4
+
+
 ```
