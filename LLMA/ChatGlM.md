@@ -20,7 +20,7 @@ git lfs version
 GIT_LFS_SKIP_SMUDGE=1
 git clone https://huggingface.co/THUDM/chatglm-6b
 
-
+https://blog.csdn.net/Hello_World1023/article/details/130356044
 
 ### 其他依赖
 
