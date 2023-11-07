@@ -30,10 +30,11 @@ vi users.xml 修改默认密码
 ```
 
 
-> 8123 clockhouse  tcp端口   9004 mysql连接端口  9005 pgsql连接端口
+> 8123 clockhouse  tcp端口   9004 mysql连接端口  9005 pgsql连接端口 9000 python clickhouse_driver连接端口
 
 ```shell
 docker run -d --name=clickhouse-server \
+-p 19000:9000 \
 -p 8123:8123 \
 -p 9004:9004 \
 -p 9005:9005 \
