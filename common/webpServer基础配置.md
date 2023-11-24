@@ -30,7 +30,7 @@ docker run --privileged=true -d -p 3333:3333 -v /home/webp-server/pics:/opt/pics
 ```
 
 ```shell
-docker run --privileged=true -d -p 3333:3333 -v /home/webp-server/file2:/opt/pics2 -v /home/webp-server/files3:/opt/pics3 --name webp-server webpsh/webp-server-go
+docker run --privileged=true -d -p 3333:3333 -v ./config.json:/etc/config.json  -v /home/webp-server/file2:/opt/pics2 -v /home/webp-server/files3:/opt/pics3 --name webp-server webpsh/webp-server-go
 ```
 
 ## 注意事项
@@ -48,4 +48,3 @@ location ~ ^/_nuxt/img/.*\.(jpg|jpeg|png)$ {
     }
 ```
 
-docker run --privileged=true -d -p 3333:3333 --restart=always  -v /home/cebon-website/files:/opt/pics --name webp-server webpsh/webp-server-go
