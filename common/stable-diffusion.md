@@ -74,9 +74,11 @@ https://mpost.io/best-100-stable-diffusion-prompts-the-most-beautiful-ai-text-to
 
 ## 相关教程
 [controlnet教程](https://www.uisdc.com/controlnet)
+
 [controlnet教程2](https://www.uisdc.com/controlnet-2)
+
 https://mp.weixin.qq.com/s?__biz=MzI2NTQ0MjY5Nw==&mid=2247484878&idx=1&sn=8d60fb4f6acc075c9ff77cb77a0cc0c0&chksm=ea9c0128ddeb883e13d7c7d52ef2b180323479679a0008f1ed3b8099ddee993da23f4f55ccc6&scene=21#wechat_redirect
+
 [cn模型下载](https://huggingface.co/lllyasviel/ControlNet/tree/main/models)
 
-https://www.uisdc.com/controlnet-2
 
