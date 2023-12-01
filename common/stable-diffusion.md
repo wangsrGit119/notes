@@ -1,9 +1,8 @@
 
 
-L: http://22wmbm26kz4l55456h6qf6tuzutupkl22try2wdzbvdm6lpcalfa.remote.moe 
-Public WebUI Colab URL: https://f14d3115-d697-4f77.gradio.live 
-Public WebUI Colab URL: https://1793e633c9cc7c.lhr.life
-Public WebUI Colab URL: https://janet-mice-humanities-robbie.trycloudflare.com
+## 简易安装 
+
+https://space.bilibili.com/12566101/
 
 ##  使用 google colab部署
 https://github.com/camenduru/stable-diffusion-webui-colab
@@ -33,7 +32,7 @@ Mo-di-diffusion：适用于生成类似于皮克斯风格的图像
 Momoko 模型是一种人工智能模型，它是根据日本画家MOMOKO的风格训练的
 
 
-## 非docker
+## 非docker 自己安装
 
 
 1.conda环境 -》python 3.10.6
@@ -71,3 +70,8 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-
 
 ## prompt
 https://mpost.io/best-100-stable-diffusion-prompts-the-most-beautiful-ai-text-to-image-prompts/
+
+
+## 相关教程
+[controlnet教程](https://www.uisdc.com/controlnet)
+
