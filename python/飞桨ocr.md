@@ -7,6 +7,11 @@ https://github.com/PaddlePaddle/PaddleOCR
 
 https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.7/doc/doc_ch/FAQ.md
 
+>最常见的比如 ：相机采集的图像为四通道，应该如何处理？
+>A: 有两种方式处理：
+>如果没有其他需要，可以在解码数据的时候指定模式为三通道，例如如果使用opencv，可以使用cv::imread(img_path, cv::IMREAD_COLOR)。
+>如果其他模块需要处理四通道的图像，那也可以在输入PaddleOCR模块之前进行转换，例如使用cvCvtColor(&img,img3chan,CV_RGBA2RGB)。
+
 ### 环境
 python>=3.8
 
