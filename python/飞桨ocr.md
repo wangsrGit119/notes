@@ -1,7 +1,11 @@
 
-##飞桨 官网
+## 飞桨 官网
 
 https://github.com/PaddlePaddle/PaddleOCR
+
+## 飞桨OCR常见问题
+
+https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.7/doc/doc_ch/FAQ.md
 
 ### 环境
 python>=3.8
