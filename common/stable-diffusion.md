@@ -81,4 +81,8 @@ https://mp.weixin.qq.com/s?__biz=MzI2NTQ0MjY5Nw==&mid=2247484878&idx=1&sn=8d60fb
 
 [cn模型下载](https://huggingface.co/lllyasviel/ControlNet/tree/main/models)
 
+## B端风格模型
+https://civitai.com/models/38558/ddiconlora
+
+https://civitai.com/models/100056/bdicon
 
