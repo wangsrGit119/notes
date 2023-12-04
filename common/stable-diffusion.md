@@ -86,3 +86,9 @@ https://civitai.com/models/38558/ddiconlora
 
 https://civitai.com/models/100056/bdicon
 
+
+## 建筑
+https://civitai.com/models/8552/dvarch-multi-prompt-architecture-tuned-model
+
+## 写实 
+Realistic Vision （c站可以搜索）
