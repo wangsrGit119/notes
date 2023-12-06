@@ -1,7 +1,17 @@
 
 ## 官网下载安装
-https://www.python.org/downloads/release/python-379/
 
+- conda 
+https://repo.anaconda.com/archive/
+> 如下 注意提示 按照提示进行即可比如输入 yes、no、回车
+```
+wget https://repo.anaconda.com/archive/Anaconda3-2023.07-1-Linux-x86_64.sh
+chmod +x Anaconda3-2023.07-1-Linux-x86_64.sh
+./Anaconda3-2023.07-1-Linux-x86_64.sh
+```
+
+
+- miniconda 
 https://docs.conda.io/en/latest/miniconda.html#windows-installers
 linux安装：https://www.cnblogs.com/qq419139624/p/14862793.html
 
