@@ -1,7 +1,9 @@
 
 ## 官网下载安装
 
--arm平台
+- arm平台
+  
+https://www.cnblogs.com/fang-d/p/17832995.html
 
 Miniforge3
 
