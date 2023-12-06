@@ -1,6 +1,16 @@
 
 ## 官网下载安装
 
+-arm平台
+
+Miniforge3
+
+```
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh
+bash Miniforge3-Linux-aarch64.sh
+source ~/.bashrc
+```
+
 - conda 
 https://repo.anaconda.com/archive/
 > 如下 注意提示 按照提示进行即可比如输入 yes、no、回车
