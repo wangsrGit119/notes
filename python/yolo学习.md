@@ -1,18 +1,22 @@
 
 
-## get start
+## Get Start
 
+```
 git clone https://github.com/mikel-brostrom/yolo_tracking
 
 cd yolo_tracking
+```
 
 如果您想运行 YOLOv8、YOLO-NAS 或 YOLOX 示例：
-
+```
 git clone https://github.com/mikel-brostrom/yolo_tracking.git
 pip install -v -e .
+```
 但如果您只想导入跟踪模块，您可以简单地：
-
+```
 pip install boxmot
+```
 
 ## 运行追踪示例
 
@@ -26,8 +30,92 @@ https://github.com/ultralytics/yolov5/blob/master/detect.py
 
 https://docs.ultralytics.com/usage/cfg/#predict
 
+## 如果单单用yolo则按照下面
 
-## supervision
+1. 图片
+```
+from ultralytics import YOLO
+import cv2
+model = YOLO('./models/yolov8n.pt')
+
+results = model('./det-img/test-img.png')  # 对图像进行预测
+print(results[0])
+# 处理结果列表
+for result in results:
+    boxes = result.boxes  # 边界框输出的 Boxes 对象
+    masks = result.masks  # 分割掩码输出的 Masks 对象
+    keypoints = result.keypoints  # 姿态输出的 Keypoints 对象
+    probs = result.probs  # 分类输出的 Probs 对象
+
+annotated_frame = results[0].plot()
+# 展示带注释的帧
+cv2.imshow("YOLOv8 Tracking", annotated_frame)
+
+while True:
+	if cv2.waitKey(1) & 0xFF == ord("q"):
+		break
+	else:
+		pass
+
+```
+2.视频
+
+```
+from ultralytics import YOLO
+
+# 配置追踪参数并运行追踪器
+model = YOLO('yolov8n.pt')
+def video_process():
+	video_path = "./det-videos/person.mp4"
+	cap = cv2.VideoCapture(video_path)
+	# 存储追踪历史
+	track_history = defaultdict(lambda: [])
+
+	# 循环遍历视频帧
+	while cap.isOpened():
+	    # 从视频读取一帧
+	    success, frame = cap.read()
+
+	    if success:
+	        # 在帧上运行YOLOv8追踪，持续追踪帧间的物体
+	        results = model.track(frame, persist=True)
+
+	        # 获取框和追踪ID
+	        boxes = results[0].boxes.xywh.cpu()
+	        track_ids = results[0].boxes.id.int().cpu().tolist()
+
+	        # 在帧上展示结果
+	        annotated_frame = results[0].plot()
+
+	        # 绘制追踪路径
+	        for box, track_id in zip(boxes, track_ids):
+	            x, y, w, h = box
+	            track = track_history[track_id]
+	            track.append((float(x), float(y)))  # x, y中心点
+	            if len(track) > 30:  # 在90帧中保留90个追踪点
+	                track.pop(0)
+
+	            # 绘制追踪线
+	            points = np.hstack(track).astype(np.int32).reshape((-1, 1, 2))
+	            cv2.polylines(annotated_frame, [points], isClosed=False, color=(230, 230, 230), thickness=10)
+
+	        # 展示带注释的帧
+	        cv2.imshow("YOLOv8 Tracking", annotated_frame)
+
+	        # 如果按下'q'则退出循环
+	        if cv2.waitKey(1) & 0xFF == ord("q"):
+	            break
+	    else:
+	        # 如果视频结束则退出循环
+	        break
+
+	# 释放视频捕获对象并关闭显示窗口
+	cap.release()
+	cv2.destroyAllWindows()
+
+```
+
+## 配合二次图像处理包 Supervision
 
 ### 官网：https://supervision.roboflow.com/
 
