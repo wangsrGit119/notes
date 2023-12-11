@@ -2,6 +2,8 @@
 
 ## chatglm 官方仓库
 https://github.com/THUDM/ChatGLM3(推荐使用)
+
+
 https://github.com/THUDM/ChatGLM-6B
 
 ## 基础环境
