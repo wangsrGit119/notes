@@ -4,6 +4,8 @@
 
 ```
 apt install dnsutils # ubuntu
+sudo yum install bind-utils # centos
+
 nslookup github.global.ssl.fastly.net
 nslookup github.com
 ```
