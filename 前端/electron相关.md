@@ -65,3 +65,24 @@ function createTargetDir(){
 
 }
 ```
+
+## 设置代理
+
+```
+let proxyRules = '192.168.x.x:8181'
+const filter = {
+    urls: ['<all_urls>']
+  }
+  
+  // 配置代理
+  if(proxyRules){
+	session.defaultSession.setProxy({ proxyRules: proxyRules }, () => {
+	  console.log('Proxy configuration is done.');
+	});  
+  }
+  
+  session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
+    details.requestHeaders['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
+    callback({ requestHeaders: details.requestHeaders })
+  })
+```
