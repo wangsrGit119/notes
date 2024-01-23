@@ -1,4 +1,8 @@
+## asar提取
 
+```
+asar extract app.asar ./
+```
 ## 启动APP后同时 执行脚本
 
 ```
