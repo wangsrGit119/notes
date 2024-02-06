@@ -5,11 +5,12 @@
 
 npm i -g @vercel/ncc
 
+## 生成必要的依赖文件
 ncc build app.ts -o dist
-
+# 安装 pkg
 npm install -g pkg
-
-pkg app.js -t node16-win-x64  --debug -o app.exe 
+# 进入构建好的 dist中进行基础文件打包
+cd dist && pkg index.js
 
 ```
 
