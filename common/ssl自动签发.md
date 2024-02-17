@@ -83,6 +83,7 @@ vi account.conf
 -----------------------添加
 export Namesilo_Key="申请的key"  ## 申请地址在管理界面左下角 API manager  
 ------------------
-## 如果服务器在国外 则dnssleep 可以降低到 60秒 否则稍微长点
+## 如果服务器在国外 则dnssleep 可以降低到 10秒 否则稍微长点
 acme.sh --issue --dns dns_namesilo --dnssleep 900 -d x1234x.top -d *.x1234x.top
+acme.sh --issue --log --dns dns_namesilo  -d x1234x.top -d *.x1234x.top --key-file /home/nginxWebUI/letsebcrypt/private.key --fullchain-file /home/nginxWebUI/letsebcrypt/cert.crt
 ```
