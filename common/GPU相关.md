@@ -1,4 +1,8 @@
 
+## cuda 和cudnn版本对照
+
+https://docs.nvidia.com/deeplearning/cudnn/reference/support-matrix.html
+
 
 ##  下面是一个Markdown表格，列出了英伟达gpu的具体参数 来源 chatgpt
 
