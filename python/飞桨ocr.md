@@ -60,6 +60,16 @@ https://gitee.com/paddlepaddle/PaddleOCR/blob/release/2.1/doc/doc_ch/recognition
 https://zhuanlan.zhihu.com/p/435118207
 
 
+- 环境
+
+   paddlepaddle 2.5
+   conda install -c conda-forge libstdcxx-ng
+   git clone  paddleOCr
+   pip install -r requirement.txt
+  
+
+
+
 
 
 
