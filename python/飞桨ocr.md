@@ -51,4 +51,16 @@ for idx in range(len(result)):
 
 https://github.com/PaddlePaddle/FastDeploy/tree/develop/examples/vision/ocr/PP-OCR/cpu-gpu/python
 
+## 训练自己数据集
+
+- 识别训练
+
+https://gitee.com/paddlepaddle/PaddleOCR/blob/release/2.1/doc/doc_ch/recognition.md
+
+https://zhuanlan.zhihu.com/p/435118207
+
+
+
+
+
 
