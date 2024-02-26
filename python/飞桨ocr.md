@@ -62,12 +62,23 @@ https://zhuanlan.zhihu.com/p/435118207
 
 - 环境
 
+```
    paddlepaddle 2.5
    conda install -c conda-forge libstdcxx-ng
    git clone  paddleOCr
    pip install -r requirement.txt
   
+```
 
+## pyinstaller 打包 ocr报错
+> Lib\site-packages\paddle\fluid\proto
+> ModuleNotFoundError: No module named 'framework_pb2'
+```
+import paddle.fluid.proto.framework_pb2 as paddle_dot_fluid_dot_framework_dot_framework__pb2
+
+# from paddle.fluid.framework import framework_pb2 as paddle_dot_fluid_dot_framework_dot_framework__pb2
+
+```
 
 
 
