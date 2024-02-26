@@ -80,6 +80,8 @@ import paddle.fluid.proto.framework_pb2 as paddle_dot_fluid_dot_framework_dot_fr
 
 ```
 
+### 其他缺少包的错误基本就是拷贝site-packages下面的包到 dist下面 _internal目录中，尤其出现paddle-gpu 使用 use_gpu=False 参数还提示 cuda相关的东西，则直接拷贝paddle 文件夹覆盖即可
+
 
 
 
