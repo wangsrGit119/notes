@@ -6,8 +6,9 @@ https://doc.fastgpt.in/docs/development/docker/
 
 ## one api部署
 
-
+https://github.com/songquanpeng/one-api
 ```
 docker run --name one-api -d --restart always -p 13000:3000 -e TZ=Asia/Shanghai -v /home/fastgpt/oneapi:/data justsong/one-api
 
 ```
+> 默认账号密码 root/123456
