@@ -22,3 +22,13 @@ https://zhuanlan.zhihu.com/p/668032021
 ## 注意事项 
 
 每次更改完 docker-compose yaml中配置后需要删除历史 fastgpt容器 然后dockercompose  重建容器即可  mongo和pg不用删除 
+
+## 本地 m3e向量模型部署
+
+```
+docker run -d -p 6200:6008 --name=m3e-large-api stawky/m3e-large-api:latest
+```
+
+https://doc.fastgpt.in/docs/development/custom-models/m3e/
+
+部署完成后在 oneapi中添加
