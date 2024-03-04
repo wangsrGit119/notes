@@ -17,3 +17,8 @@ docker run --name one-api -d --restart always -p 13000:3000 -e TZ=Asia/Shanghai 
 ## 相关结合配置
 
 https://zhuanlan.zhihu.com/p/668032021
+
+
+## 注意事项 
+
+每次更改完 docker-compose yaml中配置后需要删除历史 fastgpt容器 然后dockercompose  重建容器即可  mongo和pg不用删除 
