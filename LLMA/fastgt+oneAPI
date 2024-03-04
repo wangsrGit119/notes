@@ -12,3 +12,8 @@ docker run --name one-api -d --restart always -p 13000:3000 -e TZ=Asia/Shanghai 
 
 ```
 > 默认账号密码 root/123456
+
+
+## 相关结合配置
+
+https://zhuanlan.zhihu.com/p/668032021
