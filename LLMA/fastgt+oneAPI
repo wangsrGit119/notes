@@ -32,3 +32,6 @@ docker run -d -p 6200:6008 --name=m3e-large-api stawky/m3e-large-api:latest
 https://doc.fastgpt.in/docs/development/custom-models/m3e/
 
 部署完成后在 oneapi中添加
+同时更改 docker-compose yaml中向量模型参数
+
+
