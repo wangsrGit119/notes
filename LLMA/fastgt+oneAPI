@@ -1,0 +1,13 @@
+
+
+## fastgpt部署
+https://doc.fastgpt.in/docs/development/docker/
+
+
+## one api部署
+
+
+```
+docker run --name one-api -d --restart always -p 13000:3000 -e TZ=Asia/Shanghai -v /home/fastgpt/oneapi:/data justsong/one-api
+
+```
