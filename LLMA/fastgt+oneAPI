@@ -28,7 +28,7 @@ https://zhuanlan.zhihu.com/p/668032021
 ```
 docker run -d -p 6200:6008 --name=m3e-large-api stawky/m3e-large-api:latest
 ```
-
+https://huggingface.co/moka-ai/m3e-large
 https://doc.fastgpt.in/docs/development/custom-models/m3e/
 
 部署完成后在 oneapi中添加
