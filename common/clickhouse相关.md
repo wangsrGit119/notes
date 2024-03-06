@@ -29,7 +29,22 @@ vi config.xml  修改 远程连接
 
 vi users.xml 修改默认密码
 找到  <password>123456789</password> 修改密码
+默认账户密码即为 default/12345678
+
 ```
+### web连接工具
+
+http://dash.tabix.io/dashboard
+
+可私有化部署
+
+```
+docker pull spoonest/clickhouse-tabix-web-client
+docker run -d -p 18080:80 --name tabix spoonest/clickhouse-tabix-web-client
+
+
+```
+
 
 
 > 8123 clockhouse  http端口   9004 mysql连接端口  9005 pgsql连接端口 9000端口是ClickHouse的默认端口，用于ClickHouse的原生协议
