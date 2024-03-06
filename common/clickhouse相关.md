@@ -25,8 +25,10 @@ docker cp temp-clickhouse-server:/etc/clickhouse-server/config.xml /storage/clic
 
 ```shell
 vi config.xml  修改 远程连接
+找到  <listen_host>::</listen_host>  去掉注释
 
 vi users.xml 修改默认密码
+找到  <password>123456789</password> 修改密码
 ```
 
 
