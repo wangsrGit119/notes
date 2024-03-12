@@ -18,3 +18,5 @@ ollama run llama2-chinese
 
 ```
 
+## webui
+https://github.com/open-webui/open-webui
