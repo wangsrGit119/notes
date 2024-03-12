@@ -11,12 +11,13 @@ docker save -o [自定义名称].tar [镜像]
 eg: docker save -o coturn.tar coturn/coturn:4.6
 
 ### 镜像导入 
+```
 docker load < xxx.tar
 docker tag [镜像ID] [镜像名称]:[标签或版本]
 eg:
 docker load < coturn.tar
 docker tag [前面导入后生成的镜像ID] coturn/coturn:4.6
-
+```
 ### docker hub操作
 > https://hub.docker.com/
 > sucwangsr/dockerhubsuke
@@ -52,5 +53,11 @@ truncate -s 0 /var/lib/docker/containers/3c1452f817fad2296d1c105112faed89d01feaa
 
 ### 所有未使用镜像 网络清理
 docker system prune
+
+### ubuntu 容器 执行 更新源GPG ERROR ....报错
+> 
+```
+docker run -it --privileged imageId
+```
 
 
