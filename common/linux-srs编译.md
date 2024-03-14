@@ -64,15 +64,15 @@ ffplay  "srt://127.0.0.1:10080?streamid=#!::h=sss.srt.com.cn,r=live/123456,m=req
 ```
 
 ### RTC启动
-
-> --env CANDIDATE=$CANDIDATE
-> echo $(ifconfig eth0|grep 'inet '|awk '{print $2}')
-> --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')
-> 
 ```
-docker run --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}') --rm  -it --privileged media-server:armv7-1.0 bash
+ --env CANDIDATE=$CANDIDATE
+ echo $(ifconfig eth0|grep 'inet '|awk '{print $2}')
+--env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')
+``` 
+```
+docker run --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}') --rm  -it --privileged sucwangsr/media-server-srs:arm64-orangepi bash
 docker run --device=/dev/video0 --network=host --rm --privileged media-server:armv7-1.0 sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video0'
-docker run -d --restart=always --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')  --privileged media-server:armv7-1.0 sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video0'
+docker run -d --restart=always --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')  --privileged sucwangsr/media-server-srs:arm64-orangepi sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video0'
 
 docker run -d --restart=always --device=/dev/video1 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')  --privileged media-server:ori1.0 sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video1'
 
