@@ -18,5 +18,14 @@ ollama run llama2-chinese
 
 ```
 
+- server 模式
+```
+ollama server #  先要终止之前的启动服务
+```
+
 ## webui
 https://github.com/open-webui/open-webui
+
+```
+docker run -d -p 13001:8080 -e OLLAMA_BASE_URL=http://192.168.0.14:11434 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
