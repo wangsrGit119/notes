@@ -20,6 +20,8 @@ ollama run llama2-chinese
 
 - server 模式
 ```
+set OLLAMA_HOST=0.0.0.0:11434 # win
+export OLLAMA_HOST=0.0.0.0:11434 #linux
 ollama server #  先要终止之前的启动服务
 ```
 
