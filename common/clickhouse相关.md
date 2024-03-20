@@ -10,12 +10,13 @@ https://github.com/tabixio/tabix
 ```shell
 docker pull clickhouse/clickhouse-server:23.8
 
-docker run --rm -d --name=temp-clickhouse-server clickhouse/clickhouse-server:23.8
+docker run  -d --name=temp-clickhouse-server clickhouse/clickhouse-server:23.8
 mkdir -p /storage/clickhouse/conf /storage/clickhouse/data /storage/clickhouse/log
 
 docker cp temp-clickhouse-server:/etc/clickhouse-server/users.xml /storage/clickhouse/conf/users.xml
-docker cp temp-clickhouse-server:/etc/clickhouse-server/config.xml /storage/clickhouse/conf/config.xm
+docker cp temp-clickhouse-server:/etc/clickhouse-server/config.xml /storage/clickhouse/conf/config.xml
 
+docker rm -f temp-clickhouse-server
 
 
 
@@ -50,7 +51,7 @@ docker run -d -p 18080:80 --name tabix spoonest/clickhouse-tabix-web-client
 > 8123 clockhouse  http端口   9004 mysql连接端口  9005 pgsql连接端口 9000端口是ClickHouse的默认端口，用于ClickHouse的原生协议
 
 ```shell
-docker run -d --name=clickhouse-server \
+docker run -d --restart=always --name=clickhouse-server \
 -p 19000:9000 \
 -p 8123:8123 \
 -p 9004:9004 \
