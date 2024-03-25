@@ -22,10 +22,10 @@ ollama run llama2-chinese
 ```
 #win环境变量
 OLLAMA_ORIGINS = *
-OLLAMA_HOST=0.0.0.0:11434 # win
+OLLAMA_HOST=0.0.0.0 # win
 
 export OLLAMA_ORIGINS=* #linux
-export OLLAMA_HOST=0.0.0.0:11434 #linux
+export OLLAMA_HOST=0.0.0.0 #linux
 ollama server #  先要终止之前的启动服务
 ```
 
