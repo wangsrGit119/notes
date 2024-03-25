@@ -20,14 +20,17 @@ ollama run llama2-chinese
 
 - server 模式
 ```
-set OLLAMA_HOST=0.0.0.0:11434 # win
+#win环境变量
+OLLAMA_ORIGINS = *
+OLLAMA_HOST=0.0.0.0:11434 # win
+
+export OLLAMA_ORIGINS=* #linux
 export OLLAMA_HOST=0.0.0.0:11434 #linux
 ollama server #  先要终止之前的启动服务
 ```
 
-## webui
-https://github.com/open-webui/open-webui
-
+## gui
+https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web
 ```
 docker run -d -p 13001:8080 -e OLLAMA_BASE_URL=http://192.168.0.14:11434 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
