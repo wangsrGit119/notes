@@ -34,6 +34,7 @@ docker run --device=/dev/video0 --network=host  --rm --privileged   media-server
 ```
 
 - push.sh脚本
+  
 ```
 #!/bin/bash
 
@@ -61,6 +62,24 @@ sh push.sh /dev/video0
 ```
 ffplay  "srt://127.0.0.1:10080?streamid=#!::h=sss.srt.com.cn,r=live/123456,m=request"
 
+
+```
+
+### rtmp推流
+
+```push 脚本
+
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <video_device>"
+  exit 1
+fi
+
+video_device=$1
+
+ffmpeg -i "$video_device" -s 640:480 -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -c:a aac -f flv "rtmp://"
+
 ```
 
 ### RTC启动
@@ -72,6 +91,17 @@ ffplay  "srt://127.0.0.1:10080?streamid=#!::h=sss.srt.com.cn,r=live/123456,m=req
 ```
 docker run --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}') --rm  -it --privileged sucwangsr/media-server-srs:arm64-orangepi bash
 docker run --device=/dev/video0 --network=host --rm --privileged media-server:armv7-1.0 sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video0'
+
+docker run  --device=/dev/video0 --network=host --rm  -it --privileged sucwangsr/media-server-srs:arm64-orangepi bash
+
+------仅启动流媒体-------
+docker run -d --restart=always --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}') --privileged sucwangsr/media-server-srs:arm64-orangepi sh -c './objs/srs -c conf/docker.conf'
+
+------仅启动推流---------
+docker run -d --restart=always --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}') --privileged sucwangsr/media-server-srs:arm64-orangepi sh -c 'sh push.sh /dev/video0'
+
+------------同时推流---------
+
 docker run -d --restart=always --device=/dev/video0 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')  --privileged sucwangsr/media-server-srs:arm64-orangepi sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video0'
 
 docker run -d --restart=always --device=/dev/video1 --network=host --env CANDIDATE=$(ifconfig eth0|grep 'inet '|awk '{print $2}')  --privileged media-server:ori1.0 sh -c './objs/srs -c conf/docker.conf & sh push.sh /dev/video1'
