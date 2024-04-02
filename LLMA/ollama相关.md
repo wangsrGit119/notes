@@ -4,6 +4,10 @@ https://ollama.com/download/windows
 ## docker 下载安装
 https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image
 
+## 配置
+- 模型储存位置等配置
+https://github.com/ollama/ollama/blob/main/docs/faq.md#where-are-models-stored
+
 ## 使用
 
 > 第一次对话会下载对应的模型
