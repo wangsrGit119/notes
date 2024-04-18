@@ -1,9 +1,12 @@
 
 
 ## 安装
-> 可运行文件下载
+
+### linux 最新 可运行文件下载
 https://johnvansickle.com/ffmpeg/
 
+### win最新
+https://www.gyan.dev/ffmpeg/builds/
 ## 安装 
 
 ```shell
@@ -120,3 +123,5 @@ ffmpeg -allowed_extensions ALL -i ef849a79-4b1b-4ee1-9397-53243c1bf967.m3u8 -c c
 
 
 ```
+
+
