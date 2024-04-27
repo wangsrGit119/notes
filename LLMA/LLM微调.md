@@ -3,6 +3,11 @@
 https://github.com/hiyouga/LLaMA-Factory/blob/main/README_zh.md
 
 
+## 选择微调模型
+
+Qwen-1.8B-Chat
+
+
 ## 模型导出为 旧格式 .bin的
 
 ## 转换为 guff
