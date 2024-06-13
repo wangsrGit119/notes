@@ -1,6 +1,9 @@
 ### 替换docker默认挂在路径
 
 
+### 镜像加速
+
+https://github.com/cmliu/CF-Workers-docker.io
 
 
 
