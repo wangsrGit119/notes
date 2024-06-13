@@ -38,8 +38,11 @@ docker volume rm $(docker volume ls -q)
 
 
 ### 清理日志
+
+```
 find /var/lib/docker/containers/ -name *-json.log |xargs du -sh
 truncate -s 0 /var/lib/docker/containers/3c1452f817fad2296d1c105112faed89d01feaa4ee094e8622c959e072012f7a/3c1452f817fad2296d1c105112faed89d01feaa4ee094e8622c959e072012f7a-json.log
+```
 
 
 
@@ -48,14 +51,20 @@ truncate -s 0 /var/lib/docker/containers/3c1452f817fad2296d1c105112faed89d01feaa
 
 
 ### 查看容器IP
-> docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+```
+docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
 
 
 ###  docker 从容器拷贝文件
 
 
 ### 所有未使用镜像 网络清理
+
+```
 docker system prune
+```
 
 ### ubuntu 容器 执行 更新源GPG ERROR ....报错
 > 
