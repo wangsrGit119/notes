@@ -15,6 +15,16 @@ cd rss/
 ```
 {
     "values": [
+       	"https://www.v2ex.com/feed/ideas.xml",
+        "https://www.zhihu.com/rss",
+        "https://tech.meituan.com/feed/",
+        "http://www.ruanyifeng.com/blog/atom.xml",
+        "https://feeds.appinn.com/appinns/",
+        "https://v2ex.com/feed/tab/tech.xml",
+        "https://www.cmooc.com/feed",
+        "http://www.sciencenet.cn/xml/blog.aspx?di=30",
+        "https://www.douban.com/feed/review/book",
+        "https://www.geekpark.net/rss",
         "https://rss.nodeseek.com/",
         "https://linux.do/latest.rss",
         "https://www.v2ex.com/feed/vps.xml",
@@ -23,8 +33,8 @@ cd rss/
     "refresh": 6,
     "autoUpdatePush": 7,
     "listHeight": "600",
-    "webTitle": "Hello MJJ",
-    "webDes":"MJJ station"
+    "webTitle": "Hello suke",
+    "webDes":"suke station"
 }
 ```
 
