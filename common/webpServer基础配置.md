@@ -15,16 +15,21 @@ docker run --privileged=true -d -p 3333:3333 -v /home/webp-server/pics:/opt/pics
 ```json
 {
   "HOST": "0.0.0.0",
-  "PORT": "3333",
-  "IMG_PATH": "./pics",
+  "PORT": "13333",
+  "QUALITY": "80",
+  "IMG_PATH": "/opt/pics",
   "EXHAUST_PATH": "./exhaust",
   "IMG_MAP": {
-    "/2": "./pics2",
-    "/3": "./pics3"
+    "/wepserver": "http://192.168.123.222:18181/images/"
   },
-  "ALLOWED_TYPES": ["jpg","png","jpeg","bmp","gif","svg","heic","nef"],
-  "ENABLE_AVIF": false,
-  "ENABLE_EXTRA_PARAMS": false
+  "ALLOWED_TYPES": ["ico","jpg","png","jpeg","gif","bmp","svg","heic","nef"],
+  "CONVERT_TYPES": ["webp"],
+  "STRIP_METADATA": true,
+  "ENABLE_EXTRA_PARAMS": false,
+  "READ_BUFFER_SIZE": 4096,
+  "CONCURRENCY": 262144,
+  "DISABLE_KEEPALIVE": false,
+  "CACHE_TTL": 259200
 }
 
 ```
