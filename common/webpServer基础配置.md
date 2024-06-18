@@ -48,3 +48,8 @@ location ~ ^/_nuxt/img/.*\.(jpg|jpeg|png)$ {
     }
 ```
 
+
+
+
+
+
