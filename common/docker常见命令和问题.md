@@ -5,6 +5,29 @@
 
 https://github.com/cmliu/CF-Workers-docker.io
 
+### pull or build 的时候单独使用代理
+
+有的时候，你使用的 Docker 镜像在 build 和 run 时也需要代理。
+
+参考 官方文档 中的说明，你可以在`~/.docker/config.json` 中设置代理。
+```
+{
+ "proxies": {
+   "default": {
+     "httpProxy": "http://192.168.50.100:7893",
+     "httpsProxy": "http://192.168.50.100:7893",
+     "noProxy": "127.0.0.0/8"
+   }
+ }
+}
+```
+不想使用配置文件则直接设置环境变量
+
+```
+docker build --build-arg HTTP_PROXY="http://192.168.50.100:7893" .
+docker run --env HTTP_PROXY="http://192.168.50.100:7893" redis
+```
+
 
 
 ### 镜像导出
