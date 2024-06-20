@@ -14,8 +14,8 @@ https://github.com/cmliu/CF-Workers-docker.io
 {
  "proxies": {
    "default": {
-     "httpProxy": "http://192.168.50.100:7893",
-     "httpsProxy": "http://192.168.50.100:7893",
+     "httpProxy": "http://192.168.x.100:7890",
+     "httpsProxy": "http://192.168.x.100:7890",
      "noProxy": "127.0.0.0/8"
    }
  }
@@ -24,8 +24,8 @@ https://github.com/cmliu/CF-Workers-docker.io
 不想使用配置文件则直接设置环境变量
 
 ```
-docker build --build-arg HTTP_PROXY="http://192.168.50.100:7893" .
-docker run --env HTTP_PROXY="http://192.168.50.100:7893" redis
+docker build --build-arg HTTP_PROXY="http://192.168.x.100:7890" .
+docker run --env HTTP_PROXY="http://192.168.50.x:7890" redis
 ```
 
 
