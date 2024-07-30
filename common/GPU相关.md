@@ -43,4 +43,7 @@ gpustat
 
 https://pytorch.org/get-started/locally/
 
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+### 推荐conda 安装
+
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
