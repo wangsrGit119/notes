@@ -37,4 +37,4 @@ pritunl default-password
  - 右上角setting公网IP填写外部公网IP `1.2.3.4`
  - pritunl 启动的server的端口一定要和公网映射出去的端口一致 （ .ovpn文件可以看到具体连接端口）否则连接不上 假如你的内网 server端口9777，而pritunl配置公网ip为`1.2.3.4`，那么到时候远程配置中生成的连接地址就是
 `remote 1.2.3.4 9777 tcp-client`
- - `Server Settings` 中注意配置是TCP还是UDP，如果内网部署了上述server，通过frp的TCP映射出去，则需要确定是TCP还是UDP
+ - `Server Settings` 中注意配置是TCP还是UDP，如果内网部署了上述server，如果是UDP 那么需要更改内网映射工具 将端口开放映射为UDP，比如frp中 type=udp
