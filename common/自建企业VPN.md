@@ -16,7 +16,7 @@ touch pritunl.conf
 docker run \
     -d --name pritunl \
     --privileged \
-    --dns 127.0.0.1 \
+    --dns 114.114.114.114 \
     --network=host \
     --detach \
     -v /home/pritunl/pritunl.conf:/etc/pritunl.conf \
