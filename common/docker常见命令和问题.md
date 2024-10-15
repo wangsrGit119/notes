@@ -1,5 +1,13 @@
 ### 替换docker默认挂在路径
 
+```
+## 先同步数据
+sudo rsync -aP /var/lib/docker/ /new/path/docker/
+## 修改配置
+sudo vi /lib/systemd/system/docker.service
+## 找到下面行 增加 --data-root=/new/path/docker  或者直接 在docker配置增加这个配置即可
+ExecStart=/usr/bin/dockerd --data-root=/new/path/docker -H fd:// --containerd=/run/containerd/containerd.sock
+```
 
 ### 镜像加速
 
