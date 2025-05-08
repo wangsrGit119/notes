@@ -103,4 +103,15 @@ docker system prune
 docker run -it --privileged imageId
 ```
 
+## docker 创建无网络环境
 
+```
+
+#创建无 internal 网络 
+docker network create --driver bridge --internal isolated_net
+
+
+#使用示例
+docker run --network=isolated_net  ...
+
+```
