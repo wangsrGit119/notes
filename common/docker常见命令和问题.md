@@ -39,11 +39,16 @@ docker run --env HTTP_PROXY="http://192.168.50.x:7890" redis
 
 
 ### 镜像导出
+```
 docker save -o [自定义名称].tar [镜像]
 
-> 注意名称最好是镜像本身的名称 否则load后名称为None
-eg: docker save -o coturn.tar coturn/coturn:4.6
+##注意名称最好是镜像本身的名称 否则load后名称为None
+docker save -o coturn.tar coturn/coturn:4.6
 
+## 如果很大 可以用gzip压缩
+docker save ubuntu:latest | gzip > ubuntu_latest.tar.gz
+
+```
 ### 镜像导入 
 ```
 docker load < xxx.tar
