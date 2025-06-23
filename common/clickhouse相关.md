@@ -64,8 +64,6 @@ clickhouse/clickhouse-server:23.8
 ```
 
 ```
-version: '3.8'
-
 services:
   clickhouse-server:
     image: clickhouse/clickhouse-server:23.8
