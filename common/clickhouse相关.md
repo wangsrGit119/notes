@@ -62,3 +62,22 @@ docker run -d --restart=always --name=clickhouse-server \
 --volume=/storage/clickhouse/data:/var/lib/clickhouse/ \
 clickhouse/clickhouse-server:23.8
 ```
+
+```
+version: '3.8'
+
+services:
+  clickhouse-server:
+    image: clickhouse/clickhouse-server:23.8
+    container_name: clickhouse-server
+    restart: always
+    ports:
+      - "19000:9000"
+      - "8123:8123"
+      - "9004:9004"
+      - "9005:9005"
+    volumes:
+      - /storage/clickhouse/conf/config.xml:/etc/clickhouse-server/config.xml
+      - /storage/clickhouse/conf/users.xml:/etc/clickhouse-server/users.xml
+      - /storage/clickhouse/data:/var/lib/clickhouse/
+```
