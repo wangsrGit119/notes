@@ -57,9 +57,9 @@ docker run -d --restart=always --name=clickhouse-server \
 -p 8123:8123 \
 -p 9004:9004 \
 -p 9005:9005 \
---volume=/storage/clickhouse/conf/config.xml:/etc/clickhouse-server/config.xml \
---volume=/storage/clickhouse/conf/users.xml:/etc/clickhouse-server/users.xml \
---volume=/storage/clickhouse/data:/var/lib/clickhouse/ \
+-v ${PWD}/clickhouse/conf/config.xml:/etc/clickhouse-server/config.xml \
+-v ${PWD}/clickhouse/conf/users.xml:/etc/clickhouse-server/users.xml \
+-v ${PWD}/clickhouse/data:/var/lib/clickhouse/ \
 clickhouse/clickhouse-server:23.8
 ```
 
@@ -75,7 +75,7 @@ services:
       - "9004:9004"
       - "9005:9005"
     volumes:
-      - /storage/clickhouse/conf/config.xml:/etc/clickhouse-server/config.xml
-      - /storage/clickhouse/conf/users.xml:/etc/clickhouse-server/users.xml
-      - /storage/clickhouse/data:/var/lib/clickhouse/
+      - ./clickhouse/conf/config.xml:/etc/clickhouse-server/config.xml
+      - ./clickhouse/conf/users.xml:/etc/clickhouse-server/users.xml
+      - ./clickhouse/data:/var/lib/clickhouse/
 ```
