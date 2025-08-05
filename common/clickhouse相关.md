@@ -14,8 +14,8 @@ docker pull clickhouse/clickhouse-server:23.8
 docker run  -d --name=temp-clickhouse-server clickhouse/clickhouse-server:23.8
 mkdir -p ./clickhouse/conf ./clickhouse/data ./clickhouse/log
 
-docker cp temp-clickhouse-server:/etc/clickhouse-server/users.xml /storage/clickhouse/conf/users.xml
-docker cp temp-clickhouse-server:/etc/clickhouse-server/config.xml /storage/clickhouse/conf/config.xml
+docker cp temp-clickhouse-server:/etc/clickhouse-server/users.xml ./clickhouse/conf/users.xml
+docker cp temp-clickhouse-server:/etc/clickhouse-server/config.xml ./clickhouse/conf/config.xml
 
 docker rm -f temp-clickhouse-server
 
